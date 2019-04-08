@@ -2,16 +2,20 @@ package com.fpsrobotics.viewer;
 
 import java.io.File;
 
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import edu.wpi.first.networktables.NetworkTable;
+//import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTable; //2 of these exist
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+
 
 public class Main {
 	public static void main(String[] args) {
 		AutoRunFromConsole.runYourselfInConsole(true);
-		new Main().run();
+		//new Main().run();
+		run();
 	}
 
 	/*
@@ -20,7 +24,7 @@ public class Main {
 	 *  you also need to set webdriver.gecko.driver to wherever your geckodriver.exe is
 	 */
 
-	public void run() {
+	public static void run() {
 		NetworkTableInstance inst = NetworkTableInstance.getDefault();
 		NetworkTable table = inst.getTable("cameratable");
 
@@ -32,7 +36,9 @@ public class Main {
 		inst.startServer();
 		System.setProperty("webdriver.gecko.driver", // "~\\lib\\geckdriver.exe\\");
 				"C:\\Users\\Jon\\Desktop\\Workspace\\CameraView2\\lib\\geckodriver.exe"); //Need to either set this manually or find a way to make it relative
-		FirefoxDriver driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\FPSVaysmanJ00\\git\\StreamSwitcher\\lib\\chromedriver.exe");
+		//FirefoxDriver driver = new FirefoxDriver();
+		ChromeDriver driver = new ChromeDriver();
 		driver.navigate().to("http://google.com");
 		while (true) {
 			try {
