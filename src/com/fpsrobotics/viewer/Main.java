@@ -30,8 +30,8 @@ public class Main {
 		// inst.startClient("hostname") or similar
 		inst.startDSClient(); // recommended if running on DS computer; this gets the robot IP from the DS
 		inst.startServer();
-		//System.setProperty("webdriver.gecko.driver", // "~\\lib\\geckdriver.exe\\");
-		//		"C:\\Users\\Jon\\Desktop\\Workspace\\CameraView2\\lib\\geckodriver.exe"); //Need to either set this manually or find a way to make it relative
+		System.setProperty("webdriver.gecko.driver", // "~\\lib\\geckdriver.exe\\");
+				"C:\\Users\\Jon\\Desktop\\Workspace\\CameraView2\\lib\\geckodriver.exe"); //Need to either set this manually or find a way to make it relative
 		FirefoxDriver driver = new FirefoxDriver();
 		driver.navigate().to("http://google.com");
 		while (true) {
