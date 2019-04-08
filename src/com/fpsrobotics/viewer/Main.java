@@ -98,7 +98,7 @@ public class Main {
 				return;
 			}
 			if (newAddress.getBoolean(false)) {
-				newAddress.setBoolean(true);
+				newAddress.setBoolean(false);
 				System.out.println("Navigating to "+target.getString("http://fpsrobotics.com")+".");
 				driver.navigate().to(target.getString("http://fpsrobotics.com"));
 			}
