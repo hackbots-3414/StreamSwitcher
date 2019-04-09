@@ -79,7 +79,7 @@ public class Main {
 
 		NetworkTableEntry target = table.getEntry("target");
 		NetworkTableEntry newAddress = table.getEntry("newAddress");
-		// inst.startClientTeam(3414); // where TEAM=190, 294, etc, or use
+		inst.startClientTeam(3414); // where TEAM=190, 294, etc, or use
 		// inst.startClient("hostname") or similar
 		inst.startDSClient(); // recommended if running on DS computer; this gets the robot IP from the DS
 		
@@ -98,7 +98,7 @@ public class Main {
 				return;
 			}
 			if (newAddress.getBoolean(false)) {
-				newAddress.setBoolean(false);
+				newAddress.forceSetBoolean(false);
 				System.out.println("Navigating to "+target.getString("http://fpsrobotics.com")+".");
 				driver.navigate().to(target.getString("http://fpsrobotics.com"));
 			}
